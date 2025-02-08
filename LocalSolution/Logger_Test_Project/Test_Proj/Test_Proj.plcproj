@@ -3,59 +3,48 @@
   <PropertyGroup>
     <FileVersion>1.0.0.0</FileVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{db41dfde-979c-4399-8f0d-d83ec30704b7}</ProjectGuid>
+    <ProjectGuid>{44034213-2466-4e69-b8cd-e8406b8f244f}</ProjectGuid>
     <SubObjectsSortedByName>true</SubObjectsSortedByName>
     <DownloadApplicationInfo>true</DownloadApplicationInfo>
     <WriteProductVersion>false</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
-    <Name>EventLogLib</Name>
+    <Name>Test_Proj</Name>
     <ProgramVersion>3.1.4026.13</ProgramVersion>
-    <Application>{17a95d86-da0d-42f6-b82f-31ce6173e24e}</Application>
-    <TypeSystem>{eaf5fd45-9887-4266-8562-3e3f0d26a7ec}</TypeSystem>
-    <Implicit_Task_Info>{d35919f3-582f-4910-ae32-7bf6d703345f}</Implicit_Task_Info>
-    <Implicit_KindOfTask>{7cfdaa60-f712-4e1e-ac7b-8f8734a49d41}</Implicit_KindOfTask>
-    <Implicit_Jitter_Distribution>{c41eac5c-4e13-42db-a480-6bdc65033797}</Implicit_Jitter_Distribution>
-    <LibraryReferences>{ea3b7f2c-ab41-4cb5-8226-b5b04e01a6bd}</LibraryReferences>
-    <Company>Beckhoff UK</Company>
-    <Released>false</Released>
-    <AllowChecksForLibrary>false</AllowChecksForLibrary>
-    <POUsForPropertyAccessIncluded>false</POUsForPropertyAccessIncluded>
-    <GlobalVersionStructureIncluded>false</GlobalVersionStructureIncluded>
-    <Title>Eventlogger Library</Title>
-    <ProjectVersion>1.0.0.0</ProjectVersion>
-    <LibraryCategories>
-      <LibraryCategory xmlns="">
-        <Id>{a4a00b8a-9270-48aa-b020-371bd9c3e701}</Id>
-        <Version>1.0.0.0</Version>
-        <DefaultName>Beckhoff UK</DefaultName>
-      </LibraryCategory>
-    </LibraryCategories>
-    <SelectedLibraryCategories>
-      <Id xmlns="">{a4a00b8a-9270-48aa-b020-371bd9c3e701}</Id>
-    </SelectedLibraryCategories>
-    <Author>Chris Knight</Author>
+    <Application>{3ec59843-9924-4d97-a679-a9e0187dd121}</Application>
+    <TypeSystem>{c003b2f9-e2e1-4440-8df4-ce7a2cd0c95b}</TypeSystem>
+    <Implicit_Task_Info>{be43f012-4e90-45ec-be3f-6a7db15c31c5}</Implicit_Task_Info>
+    <Implicit_KindOfTask>{a22a7bd5-7403-41e2-9578-e865888831dd}</Implicit_KindOfTask>
+    <Implicit_Jitter_Distribution>{1a736546-f74c-48f9-869e-d82e272c6d25}</Implicit_Jitter_Distribution>
+    <LibraryReferences>{d6f87cc7-7c08-47e0-b269-72c80a9818fa}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
-    <PlaceholderReference Include="Tc3_EventLogger">
-      <DefaultResolution>Tc3_EventLogger, * (Beckhoff Automation GmbH)</DefaultResolution>
-      <Namespace>Tc3_EventLogger</Namespace>
+    <Compile Include="PlcTask.TcTTO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MAIN.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DUTs" />
+    <Folder Include="GVLs" />
+    <Folder Include="VISUs" />
+    <Folder Include="POUs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PlaceholderReference Include="Tc2_Standard">
+      <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_Standard</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_System">
+      <DefaultResolution>Tc2_System, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_System</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="Tc3_Module">
       <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc3_Module</Namespace>
       <SystemLibrary>true</SystemLibrary>
     </PlaceholderReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="EventLoggerClass" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="EventLoggerClass\ITcMessage_Ext.TcIO">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="EventLoggerClass\TcMessage_Ext.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
