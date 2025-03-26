@@ -4,7 +4,7 @@
     <Declaration><![CDATA[INTERFACE ITcMessage_Ext
 ]]></Declaration>
     <Method Name="Send" Id="{98f2b7ce-6e57-4fac-ac6c-a2745891cfea}">
-      <Declaration><![CDATA[METHOD Send : BOOL
+      <Declaration><![CDATA[METHOD Send : HRESULT
 VAR_INPUT
 	Message : T_MaxString;
 END_VAR
