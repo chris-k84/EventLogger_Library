@@ -14,30 +14,24 @@ END_VAR
     <Implementation>
       <ST><![CDATA[{analysis -2}]]></ST>
     </Implementation>
-    <Property Name="LoggerLevel" Id="{d56fe456-719d-4a96-8c1d-a040859bbf48}">
-      <Declaration><![CDATA[PROPERTY PUBLIC LoggerLevel : TcEventSeverity]]></Declaration>
-      <Get Name="Get" Id="{3fda9917-8d32-4dd1-862a-7a10160231fe}">
-        <Declaration><![CDATA[VAR
-END_VAR
-]]></Declaration>
-        <Implementation>
-          <ST><![CDATA[LoggerLevel := _loggerLevel;]]></ST>
-        </Implementation>
-      </Get>
-      <Set Name="Set" Id="{73004715-4d1a-4abc-9f0d-67258850f9eb}">
-        <Declaration><![CDATA[VAR
-END_VAR
-]]></Declaration>
-        <Implementation>
-          <ST><![CDATA[_loggerLevel := LoggerLevel;]]></ST>
-        </Implementation>
-      </Set>
-    </Property>
-    <Method Name="Send" Id="{695ccdb3-d080-4ce2-9eb6-6d31e250fe47}">
-      <Declaration><![CDATA[METHOD PUBLIC Send : BOOL
+    <Method Name="FB_Init" Id="{54f69f22-7c8d-451c-a615-37d4ec391c23}">
+      <Declaration><![CDATA[//FB_Init is always available implicitly and it is used primarily for initialization.
+//The return value is not evaluated. For a specific influence, you can also declare the
+//methods explicitly and provide additional code there with the standard initialization
+//code. You can evaluate the return value.
+METHOD FB_Init: BOOL
 VAR_INPUT
-	eventType : Tc3_EventLogger.TcEventEntry;
-	args : STRING(255);
+    bInitRetains: BOOL; // TRUE: the retain variables are initialized (reset warm / reset cold)
+    bInCopyCode: BOOL;  // TRUE: the instance will be copied to the copy code afterward (online change)   
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[THIS^.fbMsg.CreateEx(TC_Events.Tracing.LogMessage, 0);]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Send" Id="{695ccdb3-d080-4ce2-9eb6-6d31e250fe47}">
+      <Declaration><![CDATA[METHOD PUBLIC Send : HRESULT
+VAR_INPUT
+	Message : T_MaxString;
 END_VAR
 VAR
 	CreateString : HRESULT;
@@ -47,18 +41,13 @@ VAR
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[IF eventType.eSeverity >= LoggerLevel THEN
-	CreateString := THIS^.fbMsg.CreateEx(eventType, 0);
-	AddStringResult := THIS^.fbMsg.ipArguments.AddString(args);
-	SendResult := THIS^.fbMsg.Send(0);
-	ReleaseResult := THIS^.fbMsg.Release();
-	IF ReleaseResult = S_OK THEN
-		Send := TRUE;
-	ELSE
-		Send := FALSE;
-	END_IF
+        <ST><![CDATA[fbMsg.ipArguments.Clear();
+fbMsg.ipArguments.AddString(Message);
+SendResult := THIS^.fbMsg.Send(0);
+IF SendResult = S_OK THEN
+	Send := 1;
 ELSE
-	Send := FALSE;
+	Send := -1;
 END_IF
 ]]></ST>
       </Implementation>

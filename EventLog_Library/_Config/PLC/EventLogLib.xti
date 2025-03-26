@@ -1,4 +1,4 @@
 <?xml version="1.0"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.12" ClassName="CNestedPlcProjDef">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.14" ClassName="CNestedPlcProjDef">
 	<Project GUID="{DB41DFDE-979C-4399-8F0D-D83EC30704B7}" Name="EventLogLib" PrjFilePath="..\..\EventLogLib\EventLogLib.plcproj" TmcFilePath="..\..\EventLogLib\EventLogLib.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e"/>
 </TcSmItem>

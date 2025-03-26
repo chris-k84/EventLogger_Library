@@ -6,8 +6,7 @@
     <Method Name="Send" Id="{98f2b7ce-6e57-4fac-ac6c-a2745891cfea}">
       <Declaration><![CDATA[METHOD Send : BOOL
 VAR_INPUT
-	eventType : Tc3_EventLogger.TcEventEntry;
-	args : STRING(255);
+	Message : T_MaxString;
 END_VAR
 
 ]]></Declaration>
