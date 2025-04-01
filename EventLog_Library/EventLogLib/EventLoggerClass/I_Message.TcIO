@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1">
-  <Itf Name="ITcMessage_Ext" Id="{2099f939-9ec3-4558-8ed7-fb5fbee10ec9}">
-    <Declaration><![CDATA[INTERFACE ITcMessage_Ext
+  <Itf Name="I_Message" Id="{2099f939-9ec3-4558-8ed7-fb5fbee10ec9}">
+    <Declaration><![CDATA[INTERFACE I_Message
 ]]></Declaration>
     <Method Name="Send" Id="{98f2b7ce-6e57-4fac-ac6c-a2745891cfea}">
       <Declaration><![CDATA[METHOD Send : HRESULT

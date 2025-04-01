@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="Message_Null" Id="{9c01881b-903d-4d9c-8c93-cc09793c6e01}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Message_Null IMPLEMENTS I_Message
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Send" Id="{71937b1c-21c1-4a20-b654-041f81015de1}">
+      <Declaration><![CDATA[METHOD Send : HRESULT
+VAR_INPUT
+	Message	: T_MaxString;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

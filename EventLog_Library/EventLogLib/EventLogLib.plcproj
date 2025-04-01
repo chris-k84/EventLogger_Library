@@ -22,7 +22,7 @@
     <POUsForPropertyAccessIncluded>false</POUsForPropertyAccessIncluded>
     <GlobalVersionStructureIncluded>false</GlobalVersionStructureIncluded>
     <Title>Eventlogger Library</Title>
-    <ProjectVersion>2.0.0.0</ProjectVersion>
+    <ProjectVersion>2.1.0.0</ProjectVersion>
     <LibraryCategories>
       <LibraryCategory xmlns="">
         <Id>{a4a00b8a-9270-48aa-b020-371bd9c3e701}</Id>
@@ -55,10 +55,13 @@
     <Folder Include="EventLoggerClass" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EventLoggerClass\ITcMessage_Ext.TcIO">
+    <Compile Include="EventLoggerClass\I_Message.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="EventLoggerClass\TcMessage_Ext.TcPOU">
+    <Compile Include="EventLoggerClass\Message.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventLoggerClass\Message_Null.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1">
-  <POU Name="TcMessage_Ext" Id="{3f852920-143f-462f-9e3f-f9ba6d6e0946}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK TcMessage_Ext IMPLEMENTS ITcMessage_Ext
+  <POU Name="Message" Id="{3f852920-143f-462f-9e3f-f9ba6d6e0946}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Message IMPLEMENTS I_Message
 VAR_INPUT
 END_VAR
 VAR_OUTPUT
